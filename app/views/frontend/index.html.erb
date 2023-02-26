@@ -1,0 +1,38 @@
+<% content_for :title do %>
+	Home
+<% end %>
+
+<div id='featured'>
+  <img src='http://placekitten.com/960/340' title='kittenz'>
+</div>
+
+<div id='content'>
+
+<div id='item'>
+<h2>Recent tutorials</h2>
+
+<% @tutorials.each do |tutorial| %>
+<div class='item'>
+	<%= image_tag "./230x220/#{tutorial.image}" %>
+
+  <h4><%=h tutorial.category.name %></h4>
+  <h3><%=h tutorial.title %></h3>
+  <p><%=h tutorial.description %></p>
+
+  <div class='meta'>
+    <%= link_to 'Read this!', "/tutorials/#{tutorial.url_friendly}" %>
+  </div>
+</div>
+<% end %>
+
+<div id='paginate'>
+  <%= paginate_navigation %>
+</div>
+
+</div>
+
+<div id='news'>
+<h2>Latest news</h2>
+
+</div>
+</div>

@@ -1,0 +1,20 @@
+<h2>New news item</h2>
+
+<% form_for(@news_item, :url => '/backend/news_items/create') do |f| %>
+  <%= f.error_messages %>
+
+  <ul>
+    <li>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </li>
+  <li>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </li>
+  </ul>
+  
+  <%= f.submit 'Create', :class=>'submit' %>
+<% end %>
+
+<%= link_to 'Back', "/backend/news_items" %>

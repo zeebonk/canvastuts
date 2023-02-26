@@ -1,0 +1,106 @@
+<!doctype html> 
+<html> 
+	<head>
+		<title>
+			<%=h yield :title %> - JsGameTuts
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+		<link href='http://fonts.googleapis.com/css?family=Kreon:regular,bold' rel='stylesheet' type='text/css'>
+		<%= stylesheet_link_tag 'scaffold' %>		
+		<%= stylesheet_link_tag 'highlight' %>		
+    
+		<%= javascript_include_tag 'jquery' %>		
+		<%= javascript_include_tag 'highlight' %>
+	</head>
+	<body>
+		<div class='container'>
+
+			<div id='header'>
+			
+				<h1>
+					<a href='/'>JsGameTuts</a>
+				</h1>
+
+				<div id='search'>
+					<form>
+						<input type='text' name='query'>
+						<input type='submit' class='submit' value='Search'>
+					</form>
+				</div>
+
+				<%= render :partial => 'layouts/main_menu' %>
+				
+			</div>
+
+			<p style="color: green"><%= flash[:notice] %></p>
+			<p style="color: red"><%= flash[:error] %></p>
+
+			<%= yield %>
+
+		</div>
+		<div id='footer'>
+
+			<div class='container'>
+
+				<%= render :partial => 'layouts/main_menu' %>
+
+				<div id='search'>
+					<form>
+						<input type='text' name='query'>
+						<input type='submit' class='submit' value='Search'>
+					</form>
+				</div>
+
+				<div id='links'>
+
+					<ul>
+						<li><span>Coole tutorials</span></li>
+						<li><a href="http://www.amw.com">America's Most Wanted</a></li> 
+						<li><a href="/americandad">American Dad</a></li> 
+						<li><a href="http://americanidol.com">American Idol</a></li> 
+						<li><a href="/bobsburgers">Bob's Burgers</a></li> 
+						<li><a href="/bones">Bones</a></li> 
+						<li><a href="/breakingin">Breaking In</a></li> 
+						<li><a href="/chicagocode">The Chicago Code</a></li> 
+						<li><a href="/cleveland">The Cleveland Show</a></li> 
+						<li><a href="http://www.cops.com">Cops</a></li> 
+						<li><a href="/familyguy">Family Guy</a></li> 
+						<li><a href="/fringe">Fringe</a></li> 
+						<li><a href="/glee">Glee</a></li> 
+						<li><a href="/goodguys">The Good Guys</a></li> 
+						<li class='last'><a href="/hellskitchen">Hell's Kitchen</a></li>
+					</ul> 
+
+					<ul>
+						<li><span>Andere informatie</span></li>
+						<li><a href="/americandad">American Dad</a></li> 
+						<li><a href="http://americanidol.com">American Idol</a></li> 
+						<li><a href="/bobsburgers">Bob's Burgers</a></li> 
+						<li><a href="/bones">Bones</a></li> 
+						<li><a href="/breakingin">Breaking In</a></li> 
+						<li><a href="/chicagocode">The Chicago Code</a></li> 
+						<li><a href="/cleveland">The Cleveland Show</a></li> 
+						<li><a href="http://www.cops.com">Cops</a></li>
+						<li class='last'><a href="http://www.amw.com">America's Most Wanted</a></li>
+					</ul>
+ 
+				</div>
+
+			</div>
+
+    </div>
+	
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22841777-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+	
+  </body>	
+
+</html>

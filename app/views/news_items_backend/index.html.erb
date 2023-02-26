@@ -1,0 +1,21 @@
+<h2>Listing news items <%= link_to 'New news item', "/backend/news_items/new", :class=>'back' %></h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Administrator</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @news_items.each do |news_item| %>
+  <tr>
+    <td><%=h news_item.title %></td>
+    <td><%=h news_item.content %></td>
+    <td><%=h news_item.administrator.username %></td>
+    <td><%= link_to 'Edit', "/backend/news_items/#{news_item.id}/edit" %></td>
+    <td><%= link_to 'Destroy', "/backend/news_items/#{news_item.id}/destroy", :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>

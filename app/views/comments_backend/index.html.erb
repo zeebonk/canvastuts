@@ -1,0 +1,20 @@
+<h2>Listing comments</h2>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email address</th>
+    <th>Content</th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%=h comment.username %></td>
+    <td><%=h comment.email_address %></td>
+    <td><%=h comment.content %></td>
+    <td><%= link_to 'Show', "/backend/comments/#{comment.id}" %></td>
+    <td><%= link_to 'Destroy', "/backend/comments/#{comment.id}/destroy", :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+
+</table>

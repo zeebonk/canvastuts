@@ -1,0 +1,23 @@
+<h2>Listing administrators</h2>
+
+<table>
+  <tr>
+    <th>Username</th>
+		<th></th>
+		<th></th>
+		<th></th>
+  </tr>
+
+<% @administrators.each do |administrator| %>
+  <tr>
+    <td><%=h administrator.username %></td>
+    <td><%= link_to 'Edit', "/backend/administrators/#{administrator.id}/edit" %></td>
+    <td><%= link_to 'Change password', "/backend/administrators/#{administrator.id}/change_password" %></td>
+    <td><%= link_to 'Destroy', "/backend/administrators/#{administrator.id}/destroy", :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New administrator', "/backend/administrators/new" %>

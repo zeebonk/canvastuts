@@ -1,0 +1,21 @@
+<% content_for :title do %>
+	News
+<% end %>
+
+<div id='page'>  
+  <h1>All our news</h2>
+
+  <div id='tutorials'>
+  <% @news_items.each do |news_item| %>
+    <div class='tutorial <%= "first" if (news_item == @news_items.first) %>'>
+      <h3><%=h link_to news_item.title, "/news/#{news_item.url_friendly}" %></h3>
+      <h4><%=h news_item.created_at %></h4>
+      <p><%=h news_item.content %></p>
+    </div>
+  <% end %>
+  </div>  
+  
+  <div id='paginate'> 
+    <%= paginate_navigation %>
+  </div>
+</div>

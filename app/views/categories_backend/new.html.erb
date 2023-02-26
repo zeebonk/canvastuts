@@ -1,0 +1,16 @@
+<h2>New category</h2>
+
+<% form_for(@category, :url => '/backend/categories/create') do |f| %>
+  <%= f.error_messages %>
+
+  <ul>
+    <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </li>
+  </ul>
+  
+  <%= f.submit 'Create', :class=>'submit' %>
+<% end %>
+
+<%= link_to 'Back', "/backend/categories" %>

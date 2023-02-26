@@ -1,0 +1,20 @@
+<% content_for :title do %>
+	<%=h @news_item.title %> - News
+<% end %>
+
+<div id='page'>
+
+  <h2>
+    <%=h @news_item.title %>
+  </h2>
+
+  <p>
+    <%=h @news_item.content %>
+  </p>
+
+  <div id='meta'>
+    <b>Author:</b>
+    <%=h @news_item.administrator.username %>
+  </div>
+
+</div>

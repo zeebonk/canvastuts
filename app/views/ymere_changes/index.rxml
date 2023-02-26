@@ -1,0 +1,20 @@
+xml.instruct! :xml, :version=>"1.0"
+
+xml.rss(:version=>"2.0"){
+  xml.channel{
+    xml.title("Ymere page changes")
+    xml.link("http://www.ymere.nl/ymere/index.asp?id=2246&actie=zr&huur=1&koop=1&bouwtype=0&plaats=0&kamers=0&objecttype=5&woonoppervlak=0&prijs=0&balkon=0&tuin=0&serre=0")
+    xml.description("List of changes timestamps of the ymere student housing page")
+    xml.language('en-us')
+    for ymere_changes in @ymere_changes
+      xml.item do
+      xml.title("Update gevonden")
+      xml.description("Update gevonden")
+      xml.author("Ymere")
+      xml.pubDate(ymere_changes.created_at.strftime("%a, %d %b %Y %H:%M:%S %z"))
+      xml.link("http://www.ymere.nl/ymere/index.asp?id=2246&actie=zr&huur=1&koop=1&bouwtype=0&plaats=0&kamers=0&objecttype=5&woonoppervlak=0&prijs=0&balkon=0&tuin=0&serre=0")
+      xml.guid(ymere_changes.page_hash)
+    end
+    end
+  }
+}

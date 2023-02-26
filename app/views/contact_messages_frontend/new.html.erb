@@ -1,0 +1,31 @@
+<% content_for :title do %>
+	Contact
+<% end %>
+
+<div id='page'>
+<h2>Send us a message</h2>
+
+<div class='sixty'>
+<% form_for(@contact_message, :url => '/contact/save') do |f| %>
+<%= f.error_messages %>
+
+<ul>
+  <li>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </li>
+  <li>
+    <%= f.label :email_address %>
+    <%= f.text_field :email_address %>
+  </li>
+  <li>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </li>
+</ul>
+  
+<%= f.submit 'Send', :class=>'submit' %>
+<% end %>
+</div>
+
+</div>

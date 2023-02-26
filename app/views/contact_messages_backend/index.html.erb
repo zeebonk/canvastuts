@@ -1,0 +1,19 @@
+<h2>Listing contact messages</h2>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email address</th>
+    <th>Content</th>
+  </tr>
+
+<% @contact_messages.each do |contact_message| %>
+  <tr>
+    <td><%=h contact_message.username %></td>
+    <td><%=h contact_message.email_address %></td>
+    <td><%=h contact_message.content %></td>
+    <td><%= link_to 'Show', "/backend/contact_messages/#{contact_message.id}" %></td>
+    <td><%= link_to 'Destroy', "/backend/contact_messages/#{contact_message.id}/destroy", :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>

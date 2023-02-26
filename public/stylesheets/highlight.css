@@ -1,0 +1,69 @@
+/* Simple stylesheet for syntax highlighting colors: 
+ *
+ * Just change the colors to whatever you find fit for your website! 
+ */
+
+/* Linenumbers (currently : greyish) */
+.code div
+{
+  width:27px; 
+  color:#777; 
+  text-align:right;
+}
+
+/* Keywords (currently : deep blue ) */
+.code span, .code span.html
+{
+  color: #1b2495;
+}
+
+/* Regex (currently : somewhat purple red) */
+.code em 
+{
+  color : #e00064;
+}
+
+/* Singe & Double quotes (currently : greyish) */
+.code span.quote
+{
+  color : #888;
+}
+
+/* Comments (currently : green) */
+.code span.comment, .code span.multi-comment
+{
+  color:#499130;
+}
+
+/* You shouldn't have to touch anythying below this line:
+------------------------------------------------------------------------------*/
+.code, .code div
+{
+  float:left;
+}
+
+.code
+{
+  width      : 100%;
+  font       : 15px/22px 'Courier New', Courier;
+  margin     : 25px 0;
+  background : #f3f3f3; 
+  
+  border:1px solid #eee; 
+  border-bottom:2px solid #ddd;
+}
+
+.code pre, .code div
+{
+  padding:4px 0 8px 0;
+}
+
+.code pre 
+{
+  float      : right; 
+  overflow   : auto; 
+  width      : 95%; 
+  background : #fff;
+  padding-left: 7px;
+  overflow-Y : hidden;
+}

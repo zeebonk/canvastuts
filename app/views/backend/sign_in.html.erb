@@ -1,0 +1,21 @@
+<div id='login'>
+
+<% form_tag :controller => 'backend', :action => 'authenticate' do %>
+<h3>Sign in</h3>
+
+<ul>
+  <li>
+    <%= label_tag "username", "Name" %>
+    <%= text_field_tag :username, params[:username], :class => 'text-box' %>
+  </li>
+  <li>
+    <%= label_tag "password", "Password" %>
+    <%= password_field_tag :password, params[:password], :class => 'text-box' %>
+  </li>
+</ul>
+
+<%= submit_tag "Sign in", :class=>'submit' %>
+
+<% end %>
+
+</div>

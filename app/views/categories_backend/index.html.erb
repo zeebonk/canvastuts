@@ -1,0 +1,20 @@
+<h2>Listing categories <%= link_to 'New category', "/backend/categories/new", :class=>'back' %></h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tutorials</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%=h category.name %></td>
+    <td><%=h category.tutorials.count %></td>
+    <td><%= link_to 'Edit', "/backend/categories/#{category.id}/edit" %></td>
+    <td><%= link_to 'Destroy', "/backend/categories/#{category.id}/destroy", :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>

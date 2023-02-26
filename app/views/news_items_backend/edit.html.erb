@@ -1,0 +1,18 @@
+<h2>Editing news item  <%= link_to 'Back', "/backend/news_items" %></h2>
+
+<% form_for(@news_item, :url => "/backend/news_items/#{@news_item.id}/update") do |f| %>
+  <%= f.error_messages %>
+
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :content %>
+      <%= f.text_area :content, :class=>'content' %>
+    </li>
+  </ul>
+
+  <%= f.submit 'Update', :class=>'submit' %>
+<% end %>

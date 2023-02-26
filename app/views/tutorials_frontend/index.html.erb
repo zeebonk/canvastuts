@@ -1,0 +1,28 @@
+<% content_for :title do %>
+	Tutorials
+<% end %>
+
+<div id='page'>
+  
+  <h2>Listing tutorials</h2>
+
+  <div id='tutorials'>
+  
+    <% @tutorials.each do |tutorial| %>
+      <div class='tutorial <%= "first" if (tutorial == @tutorials.first) %>'>
+        <%= image_tag "./230x220/#{tutorial.image}" %>
+
+        <h3><%=h link_to tutorial.title, "/tutorials/#{tutorial.url_friendly}" %></h3>
+        <h4>Author: <%=h tutorial.administrator.username %> <span>/ <%=h tutorial.created_at %></span></h4>
+
+        <p><%=h tutorial.description %></p>
+
+        <h5>Category: <%=h tutorial.category.name %></h5>
+      </div>
+    <% end %>
+  </div>
+  
+  <div id='paginate'>
+    <%= paginate_navigation %>
+  </div>
+</div>

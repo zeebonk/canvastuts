@@ -1,0 +1,48 @@
+<!doctype html> 
+
+<html>   
+  <head>
+    
+    <title>
+      <%= controller.controller_name %>: <%= controller.action_name %>
+    </title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+				
+    <%= stylesheet_link_tag 'scaffold' %>		
+    
+  </head>
+  <body>
+  
+    <div class='container'>
+      
+      <div id='header'>
+      
+        <h1>
+          <a href=''>Jsgametuts</a>
+        </h1>
+
+        <ul>		
+          <li><%= link_to "Home", "/" %></li>
+          <li><%= link_to "Sign in", "/backend/sign_in" %></li>
+          <li><%= link_to "News items", "/backend/news_items" %></li>
+          <li><%= link_to "Administrators", "/backend/administrators" %></li>
+          <li><%= link_to "Tutorials", "/backend/tutorials" %></li>
+          <li><%= link_to "Categories", "/backend/categories" %></li>
+          <li><%= link_to "Contact messages", "/backend/contact_messages" %></li>
+          <li><%= link_to "Sign out", "/backend/sign_out" %></li>
+        </ul>
+      
+      </div>
+
+      <p style="color: green"><%= flash[:notice] %></p>
+      <p style="color: red"><%= flash[:error] %></p>
+		
+      <div id='page'>
+        <%= yield %>
+      </div>
+      
+    </div>
+    
+  </body>	
+</html>

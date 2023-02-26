@@ -1,0 +1,19 @@
+<h2>New administrator</h2>
+
+<% form_for(@administrator, :url => "/backend/administrators/create") do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.submit 'Create', :class=>'submit' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', "/backend/administrators" %>

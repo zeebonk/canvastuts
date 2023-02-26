@@ -1,0 +1,22 @@
+<% form_for(@comment, :url => "/tutorials/#{@comment.tutorial.url_friendly}/add_comment") do |f| %>
+  <%= f.error_messages %>
+  <h3>New comment</h3>
+
+  <ul>
+    <li>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </li>
+    <li>
+      <%= f.label :email_address %>
+      <%= f.text_field :email_address %>
+    </li>
+    <li>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </li>
+  </ul>
+
+  <%= f.hidden_field :tutorial_id %>
+  <%= f.submit 'Create', :class=>'submit' %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2>Editing category <%= link_to 'Back', "/backend/categories", :class=>'back' %></h2>
+
+<% form_for(@category, :url => "/backend/categories/#{@category.id}/update") do |f| %>
+  <%= f.error_messages %>
+
+  <ul>
+    <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </li>
+  </ul>
+  <%= f.submit 'Update', :class=>'submit' %>
+<% end %>

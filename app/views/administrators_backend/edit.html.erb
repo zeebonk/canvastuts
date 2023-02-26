@@ -1,0 +1,17 @@
+<h2>Editing administrator</h2>
+
+<% form_for(@administrator, :url => "/backend/administrators/#{@administrator.id}/update") do |f| %>
+<%= f.error_messages %>
+
+<ul>
+  <li>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </li>
+</ul>
+
+<%= f.submit 'Update', :class=>'submit' %>
+	
+<% end %>
+
+<%= link_to 'Back', "/backend/administrators" %>
